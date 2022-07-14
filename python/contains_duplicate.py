@@ -6,6 +6,9 @@ from typing import List
 
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
-        if len(nums) > len(set(nums)):
-            return True
+        a = set()
+        for item in nums:
+            if item in a:
+                return True
+            a.add(item)
         return False
